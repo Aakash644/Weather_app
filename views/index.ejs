@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <title>Weather </title>
+    <style>
+        body {
+            width:100%;
+            background: radial-gradient(circle at 50% 50%, #3b1bcc, #613ad3, #7e56da, #9771e1, #ae8de8, #c3a9ee, #d8c5f4, #ece2fa, #ffffff); }
+
+        .main {
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+
+        }
+        .container-2{
+            padding:10px;
+            
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+            width:400px;
+            
+            
+           margin-left:36%;
+           height:auto;
+            border-radius: 10px;
+        }
+        #btn1{
+            background-color: black;
+        }
+        #btn1:hover{
+            background-color: orange;
+
+        }
+        img{float:left;
+            border: 0.5px solid black;
+        }
+        img:hover{
+            box-shadow:5px 2px 2px blue;
+        }
+        .heading1{
+            background-color: orange;
+            border-radius: 10px;
+        }
+
+
+        .heading {
+            border-radius: 10px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading" align="center">
+        <h1>Current Weather </h1>
+    </div>
+
+
+    <div class="main" align="center">
+        <form action="/" method="post" class="row g-2">
+            <div class="col-auto">
+                <label for="staticEmail2">
+                    <h2>Location</h2>
+                </label>
+
+            </div><br>
+            <div class="col-auto" align="center">
+
+                <input type="text" name="city" class="form-control" placeholder="City" id="inputPassword2">
+            </div>
+            <div class="col-auto">
+                <button type="submit" id="btn1" class="btn btn-dark mb-2">Search</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <div class="container-2" align="center">
+        <div class="heading1" align="center">
+            <h1 ><svg xmlns="http://www.w3.org/2000/svg" color="red" width="30px" height="30px"
+                    fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+                <%=city__name%>, <%=country%>
+            </h1>
+           
+        </div>
+        <hr>
+        <div class="container--3" align="center">
+
+          
+            <div class="content">
+
+
+                <div class="item div6" >
+                    <img style="background-color:white;border-radius:10px;" src="<%=img_src%>" alt="know" width="180px"
+                        height="180px" srcset="">
+                      
+                </div>
+
+
+
+                <div class="item div3" align="center">
+                    <h2 style="font-size:40px;">
+                        <%=temp1%> °C
+                    </h2>
+                    <div class="item">
+                        <h4 style="color:blue;"> <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                fill="currentColor" color="grey" class="bi bi-wind" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z" />
+                            </svg> Wind - <%=wind%>
+                        </h4>
+                    </div>
+                    <div class="item">
+                        <h4 style="color:blue;"><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
+                                color="yellow" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+                                <path fill-rule="evenodd"
+                                    d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z" />
+                            </svg> Pressure - <%=prs%>
+                        </h4>
+                    </div>
+                    <div class="item">
+                        <h4 style="color:blue;"><svg xmlns="http://www.w3.org/2000/svg" width="20px" color="purple"
+                                height="20px" fill="currentColor" class="bi bi-thermometer" viewBox="0 0 16 16">
+                                <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                <path
+                                    d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0zM6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15V2.5z" />
+                            </svg> Humidity - <%=humid%>
+                        </h4>
+                    </div>
+                </div>
+                <div class="item div7" >
+                   <h4 style="color:blue;" align="center">
+                    <%=date_time%>
+                        </h4>
+                    
+                </div>
+                <div class="item div8" style="width:200px;display:flex;flex-direction:row;justify-content:left;" >
+                    <h3 style="margin-left:-15px;"  >
+                     <%=desc%>
+                         </h3>
+                     
+                 </div>
+            </div>
+
+
+        </div>
+    </div>
+  
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
